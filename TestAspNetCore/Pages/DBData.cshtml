@@ -1,0 +1,21 @@
+﻿@page
+@model TestAspNetCore.Pages.DBDataModel
+@{
+    ViewData["Data"] = "連資料庫取資料";
+}
+<h1 class="text-danger">Data</h1>
+
+<table border="1">
+    <tr>
+        <th>流水號</th>
+        <th>號碼</th>
+    </tr>
+    @if (!Model.data.HasError)
+    @foreach (var item in Model.data.ReturnData)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Number1</td>
+        </tr>
+    }
+</table>
